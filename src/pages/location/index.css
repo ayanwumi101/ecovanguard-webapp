@@ -1,0 +1,22 @@
+.location {
+    padding: var(--container-padding)
+}
+
+.location__heading {
+    text-align: center;
+    color: #3A3A3A;
+}
+
+.location__buttons>span {
+    background-color: #DCEDF5;
+    border-radius: 15px;
+    font-weight: 500;
+    color: #3A3A3A;
+    padding: 12px 30px;
+}
+
+.location__map-image {
+    margin-top: 20px;
+    height: 60vh;
+    background: url(../../assets/map-placeholder.jpg) 100%/cover no-repeat
+}

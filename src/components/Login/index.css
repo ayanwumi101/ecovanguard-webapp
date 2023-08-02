@@ -1,0 +1,111 @@
+.signIn-wrapper {
+  padding: var(--container-padding);
+  display: flex;
+  align-items: center;
+}
+
+.signIn-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.signIn-form {
+  flex-basis: 45%;
+}
+
+.signIn-form input:not(input[type="checkbox"]) {
+  width: 100%
+}
+
+.signIn-img {
+  flex-basis: 60%;
+  text-align: center;
+}
+
+.signIn-img {
+  width: 100%;
+  height: 100%;
+}
+
+.signIn-password {
+  display: flex;
+  justify-content: space-between;
+  /* for screens where the "forgot your password" text wraps */
+  gap: 40px;
+  align-items: baseline;
+}
+
+forgot-password {
+  color: #0397d6;
+}
+
+.signIn-wrapper a {
+  color: #0397d6;
+}
+
+.error-message {
+  color: red;
+}
+
+.policy-checkBox {
+  display: flex;
+  align-items: baseline;
+  gap: var(--heading-3);
+}
+
+.input-style {
+  border: 2px solid red;
+}
+
+.link-btn {
+  border: 2px solid #0397d6;
+  background-color: #fff;
+  color: #0397d6;
+  margin-block: 20px;
+  width: 100%;
+}
+
+.link-btn:nth-child(2) {
+  margin-top: 0;
+}
+
+.icons {
+  height: 18px;
+  width: 18px;
+  margin-right: 10px;
+}
+
+/* Tab and mobile responsiveness */
+@media screen and (max-width: 700px) {
+  .signIn-header {
+    /* to put the form behind the bg image overlay */
+    position: relative;
+  }
+
+  .signIn-form {
+    flex-basis: 100%;
+    /* to put the form behind the bg image overlay */
+    position: relative;
+  }
+
+  .signIn-img {
+    display: none;
+  }
+
+  .signIn-wrapper {
+    position: relative;
+    background: url("../../assets/tree.svg") center/200% no-repeat;
+  }
+
+  /* overlay for image to reduce opacity */
+  .signIn-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.65);
+  }
+}

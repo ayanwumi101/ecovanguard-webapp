@@ -1,0 +1,8 @@
+.partner-modal li {
+  margin-left: var(--heading-2);
+}
+@media screen and (min-width: 1024px) {
+  .partner-modal li {
+    margin-inline: var(--heading-1);
+  }
+}

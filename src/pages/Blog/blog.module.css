@@ -1,0 +1,33 @@
+.blog {
+  padding: var(--container-padding);
+}
+
+.blog__text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.blog__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog__list ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.blog__list li {
+  color: #0397d6;
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .blog__list li {
+    font-size: 1.8ch;
+  }
+}

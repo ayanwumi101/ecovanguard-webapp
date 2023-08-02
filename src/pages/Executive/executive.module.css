@@ -1,0 +1,38 @@
+.executive {
+  padding: var(--container-padding)
+}
+
+.executive__photos {
+  --column: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--column), 1fr);
+  gap: var(--heading-1);
+}
+
+/* .executive__photos>div :not(h3) {
+  color: #787878;
+} */
+
+/* .executive__photos__box {
+  cursor: pointer;
+} */
+
+.executive__photos__box h3 {
+  font-weight: 500;
+}
+
+/* .executive__photos>div img {
+  height: 300px;
+} */
+
+@media screen and (min-width: 768px) {
+  .executive__photos {
+    --column: 3;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .executive__photos {
+    --column: 4;
+  }
+}

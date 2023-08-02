@@ -1,0 +1,27 @@
+.button-link {
+  background-color: #0397d6;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  width: 300px;
+  max-width: 100%;
+  font-size: 18px;
+  padding-block: 16px;
+}
+a {
+  border-radius: 10px;
+}
+@media screen and (min-width: 768px) {
+  .button-link {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .button-link {
+    font-weight: bold;
+    font-size: 23px;
+  }
+}

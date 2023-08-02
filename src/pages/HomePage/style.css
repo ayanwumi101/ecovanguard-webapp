@@ -1,0 +1,144 @@
+/* Second Section */
+.section2-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: var(--container-padding)
+}
+
+.section2-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  /* flex-wrap: wrap; */
+}
+
+.section2-body .top,
+.section2-body .bottom {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+
+
+.sect2-msg {
+  flex-basis: 100%;
+}
+
+.sect2-msg.msg1 h2,
+.sect2-msg.msg3 h2 {
+  color: #0397d6;
+}
+
+.sect2-msg.msg2 h2,
+.sect2-msg.msg4 h2 {
+  color: #4aaa42;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 500px) {
+
+  .section2-body .top,
+  .section2-body .bottom {
+    flex-direction: column;
+  }
+}
+
+/* Third Section */
+.section3-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: var(--container-padding)
+}
+
+.sect3-header {
+  display: flex;
+  justify-content: center;
+}
+
+.sect3-body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sect3-body>div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.sec-sch {
+  color: #0397d6;
+}
+
+.tert-inst {
+  color: #4aaa42;
+}
+
+.sec-sch>div {
+  height: 180px;
+  border-radius: 50%;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 250%;
+  background-color: #dcecf5;
+  color: #0397d6;
+  margin: auto;
+}
+
+.all-members .center {
+  height: 14rem;
+  border-radius: 50%;
+  width: 14rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 350%;
+  background-color: #f5f5f5;
+  margin: auto;
+}
+
+.tert-inst div {
+  height: 180px;
+  border-radius: 50%;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 250%;
+  background-color: #caf5b9;
+  color: #4aaa42;
+  margin: auto;
+}
+
+.button-container {
+  margin-top: 2rem;
+}
+
+.subscribe-input {
+  width: 350px
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 700px) {
+  .sect3-body {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .section2-body .top,
+.section2-body .bottom {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+}

@@ -1,0 +1,7 @@
+.input {
+  border: 1px solid black;
+  width: 18rem;
+  max-width: 100%;
+  background: #f9f9f9 right/30px no-repeat;
+  background-origin: content-box;
+}

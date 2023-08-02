@@ -1,0 +1,53 @@
+.abt-section1-container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--container-padding)
+}
+
+.abt-section1-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.abt-section1-body>div>h2 {
+  margin-bottom: 1rem;
+}
+
+.abt-section1-body li {
+  margin-bottom: 1rem;
+}
+
+.abt-section1-body ol {
+  margin-left: 15px;
+}
+
+/* Second Section */
+.abt-section2-container {
+  padding: var(--container-padding);
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.abt-section2-card>img {
+  width: 114px;
+  height: 102px;
+  border: 10px;
+}
+
+.our-mission {
+  color: #4aaa42;
+}
+
+.our-vision {
+  color: #0397d6;
+}
+
+@media screen and (max-width: 650px) {
+  .abt-section2-container {
+    flex-direction: column;
+    width: 85%;
+  }
+}

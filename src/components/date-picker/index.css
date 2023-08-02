@@ -1,0 +1,16 @@
+.rdp-months {
+    justify-content: center
+}
+
+.rdp-nav {
+    color: #2196F3
+}
+
+.rdp-day_outside {
+    color: #A69494
+}
+
+.rdp-day_selected {
+    background-color: #0397D6 !important;
+    outline-color: #0397D6 !important
+}

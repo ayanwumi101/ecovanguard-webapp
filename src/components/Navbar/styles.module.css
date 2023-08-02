@@ -1,0 +1,177 @@
+.navbar_container {
+  width: 95%;
+  margin: auto;
+  /* border-bottom: 1.5px solid lightgray; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  width: 190px;
+  height: 50px;
+}
+
+.logo {
+  width: 90%;
+}
+
+.lists {
+  list-style-type: none;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--heading-3);
+  justify-content: space-between;
+}
+
+.lists li {
+  font-weight: 400;
+  color: #4aaa42;
+  height: 50px;
+}
+
+.lists li .right {
+  display: none;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  height: 30px;
+  background-color: #4aaa42;
+  border-radius: 7px;
+  padding: 5px 10px;
+  color: #fff !important;
+  font-size: 18px;
+}
+
+.login img {
+  width: 20px;
+  height: 20px;
+}
+
+.sidenav_container {
+  width: 70vw;
+  padding-top: 30px;
+  height: 100%;
+  background: #e1ffd2;
+  overflow-x: hidden;
+  position: absolute;
+  transition: 1.5s;
+}
+
+.icon {
+  display: none;
+}
+
+.icon>* {
+  font-size: 2rem;
+}
+
+.close_icon {
+  font-size: 1.8rem;
+}
+
+.sidenav_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sidenav_btn:hover {
+  background-color: rgb(201, 199, 199);
+}
+
+.sidenav_modal {
+  background-color: hsla(0, 0%, 0%, 0.75);
+  display: none;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  position: fixed;
+  overflow-x: hidden;
+  transition: 1.5s;
+}
+
+@media screen and (min-width: 600px) {
+  .sidenav_container {
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sidenav_modal {
+    display: initial;
+  }
+
+  .lists li:not(.login) {
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+
+  .lists li {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .lists li .right {
+    display: initial;
+  }
+
+  .login {
+    width: 200px;
+    border-radius: initial;
+  }
+
+  .login img[alt="account"] {
+    display: none;
+  }
+
+  .links {
+    display: none;
+    width: 100%;
+  }
+
+  .lists {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .login img {
+    display: none;
+  }
+
+  .button {
+    margin: 20px;
+  }
+
+  .sidenav_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 35px;
+  }
+
+  .icon {
+    display: block;
+    font-size: 23px;
+  }
+
+  .login {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 18px;
+    cursor: pointer;
+  }
+}

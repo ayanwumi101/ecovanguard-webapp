@@ -1,0 +1,114 @@
+.profile_container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    margin-bottom: 35px;
+}
+
+.heading img {
+    position: absolute;
+    right: 0;
+}
+
+
+.editIcon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.columns_container {
+    max-width: 950px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.first_column,
+.second_column {
+    max-width: 450px;
+    height: auto;
+}
+
+.form_control {
+    margin: 25px 0;
+    max-width: 450px;
+}
+
+.form_control input {
+    width: 100%
+}
+
+.profile_image {
+    width: 180px;
+    height: 150px;
+    margin: auto;
+
+}
+
+.avatar {
+    width: 100%;
+    border: 2px solid #4ae;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.text {
+    margin-bottom: 18px;
+}
+
+.sub_heading {
+    margin: 10px 0;
+}
+
+.teams,
+.participation {
+    list-style-type: disc;
+    margin: 5px 25px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+    .profile_container {
+        padding: 0 13px;
+    }
+
+    .columns_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .first_column,
+    .second_column {
+        max-width: 400px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    .other_details {
+        padding: 0 20px;
+    }
+
+    .form_control {
+        max-width: 350px;
+    }
+
+    .heading img {
+        position: absolute;
+        right: 15px;
+    }
+
+}

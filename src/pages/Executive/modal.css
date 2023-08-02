@@ -1,0 +1,33 @@
+/* .dialog__container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: var(--heading-1);
+} */
+
+.dialog__img img {
+  /* border-radius: var(--heading-1); */
+  max-width: 300px;
+  height: 300px;
+}
+.dialog__details {
+  flex-basis: 80%;
+}
+.dialog__details small:first-of-type {
+  color: #787878;
+  display: block;
+  margin-block: 10px;
+}
+@media screen and (max-width: 800px) {
+  .dialog__img {
+    margin: auto;
+  }
+  .dialog__img img {
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .dialog__container {
+    flex-direction: row;
+  }
+}

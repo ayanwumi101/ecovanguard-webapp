@@ -1,0 +1,215 @@
+.projects_container {
+    margin: auto;
+}
+
+.heading {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.visitation {
+    background-color: #ededed;
+    padding: 20px 30px;
+    position: relative;
+}
+
+.carousel_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 920px;
+    margin: 25px auto;
+}
+
+.active_image {
+    max-width: 350px;
+    height: 430px;
+}
+
+.active_image img {
+    border-radius: 5px;
+}
+
+.prev_image,
+.next_image {
+    width: 270px;
+    height: 360px;
+    position: relative;
+}
+
+.project_description p {
+    margin-bottom: 13px;
+}
+
+.caption_details .description p {
+    /* font-size: 12px; */
+}
+
+.prev_image img,
+.next_image img {
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+}
+
+.action_btns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 47%;
+}
+
+.action_btns button {
+    background: none;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #4ae;
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.next_btn {
+    position: absolute;
+    right: 110px;
+    top: 45%;
+}
+
+.prev_btn {
+    position: absolute;
+    top: 45%;
+    left: 110px;
+}
+
+.caption {
+    margin: 12px auto;
+    text-align: center;
+}
+
+.caption_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 970px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.cards_container {
+    padding: var(--container-padding)
+}
+
+.cards_container h4 {
+    margin-bottom: 30px;
+}
+
+.cards {
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    /* max-width: 270px; */
+    background-color: #ededed;
+    margin-bottom: 25px;
+    border-radius: 12px;
+}
+
+.card_text {
+    padding: 10px;
+}
+
+.card_text p {
+    font-size: 13px;
+}
+
+.card_img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.completed_projects {
+    padding: var(--container-padding)
+}
+
+.completed_projects h4 {
+    margin-bottom: 18px;
+}
+
+.completed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.project_image {
+    width: 600px;
+    margin-bottom: 35px;
+}
+
+.project_img {
+    width: 100%;
+}
+
+.project_description {
+    width: 420px;
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    .active_image {
+        max-width: 100%;
+        height: 360px;
+        margin: auto;
+    }
+
+    .next_btn {
+        position: absolute;
+        right: 5px;
+        top: 35%;
+        z-index: 1;
+    }
+
+    .prev_btn {
+        position: absolute;
+        top: 35%;
+        left: 5px;
+        z-index: 1;
+    }
+
+    .active_image img {
+        width: 100%;
+    }
+
+    .prev_image,
+    .next_image {
+        display: none;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .campaign {
+        margin: 12px 0;
+    }
+}

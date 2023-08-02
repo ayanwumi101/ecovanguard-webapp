@@ -1,0 +1,14 @@
+.calendar__date {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.calendar__date :first-child {
+  color: #4aaa42;
+}
+
+.calendar__date-picker {
+  border-radius: 20px;
+}

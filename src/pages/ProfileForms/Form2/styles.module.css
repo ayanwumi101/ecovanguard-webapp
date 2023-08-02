@@ -1,0 +1,64 @@
+.profile_container {
+    width: 95%;
+    margin: auto;
+    padding-bottom: 25px;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.heading h2 {
+    margin-bottom: 1rem;
+}
+
+.form_container {
+    max-width: 400px;
+    margin: auto;
+}
+
+.form_control {
+    margin: 20px auto;
+}
+
+.form_control input {
+    width: 100%
+}
+
+select {
+    width: 100%;
+}
+
+
+.submit_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.submit_container button {
+    background-color: #4ae;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 6px;
+    border: none;
+}
+
+.arrow {
+    color: white;
+}
+
+.error_text {
+    color: tomato;
+    font-size: 13.5px;
+}
+
+@media screen and (max-width: 600px) {
+    .profile_container {
+        padding: 0 15px;
+    }
+
+
+}
