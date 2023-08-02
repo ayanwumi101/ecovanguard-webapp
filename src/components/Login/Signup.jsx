@@ -79,7 +79,7 @@ const Signup = () => {
           title: "Account created.",
           description: "Account created successfully!.",
           status: "success",
-          duration: 3000,
+          duration: 2000,
           isClosable: true,
           position: "top-right",
         });
@@ -89,7 +89,7 @@ const Signup = () => {
           title: "Error!",
           description: error.message,
           status: "error",
-          duration: 3000,
+          duration: 2000,
           isClosable: true,
           position: "top",
         });
@@ -249,7 +249,7 @@ export const Login = () => {
           title: "Login Successful.",
           description: "successfully logged in!.",
           status: "success",
-          duration: 3000,
+          duration: 2000,
           isClosable: true,
           variant: "top-accent",
           position: "top-right",
@@ -260,7 +260,7 @@ export const Login = () => {
           title: "Error!",
           description: error.message,
           status: "error",
-          duration: 3000,
+          duration: 2000,
           isClosable: true,
           position: "top",
         });

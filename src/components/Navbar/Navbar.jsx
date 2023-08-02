@@ -11,7 +11,7 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
-  useToast, Image
+  useToast, Image, Stack
 } from "@chakra-ui/react";
 import { signOut, getAuth } from 'firebase/auth'
 import { getFirestore, query, where, getDocs, collection, } from 'firebase/firestore'
@@ -99,7 +99,7 @@ const LinkList = () => {
           title: "Logout Successful.",
           description: "You have been logged out successfully!.",
           status: "success",
-          duration: 3000,
+          duration: 2000,
           isClosable: true,
           variant: 'left-accent',
           position: 'top-right',
@@ -152,6 +152,7 @@ const LinkList = () => {
 
   return (
     <ul className={styles.lists}>
+      {/* <Stack direction='row' alignItems='center'> */}
       {openDrawer && <ProfileDrawer currentUser={currentUser} userDetails={userDetails} setOpenDrawer={setOpenDrawer} />}
       <NavLink
         to="/contact"
@@ -199,34 +200,37 @@ const LinkList = () => {
         </li>
       </NavLink>
 
-<>
-  {userDetails ?
-      <Menu>
-          <Text mr='2' fontWeight={'semibold'} textTransform='capitalize' display={{ base: 'none', md: 'block', lg: 'block' }}>{userDetails[0]?.user_name}</Text>
-          <MenuButton as={'button'} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0} border='none' outline='none'>
-            <Avatar src='Test Union' size={'sm'} name={userDetails[0]?.full_name} >
-              <AvatarBadge bg='green.500' boxSize='1.25em' />
-            </Avatar>
-          </MenuButton>
+      <Box>
+      {userDetails ?
+        <Menu>
+            <Stack direction='row' alignItems='center'>
+                <Text mr='2' fontWeight={'semibold'} textTransform='capitalize' display={{ base: 'none', md: 'block', lg: 'block' }}>{userDetails[0]?.user_name}</Text>
+                <MenuButton as={'button'} rounded={'full'} variant={'link'} cursor={'pointer'} minW={0} border='none' outline='none'>
+                  <Avatar src='Test Union' size={'sm'} name={userDetails[0]?.full_name} >
+                    <AvatarBadge bg='green.500' boxSize='1.25em' />
+                  </Avatar>
+                </MenuButton>
+            </Stack>
 
-          <MenuList zIndex={'overlay'}>
-            <MenuDivider />
-            <MenuItem onClick={showProfile}> Profile</MenuItem>
-            <MenuDivider />
-            <MenuItem onClick={handleLogout}>Logout</MenuItem>
-          </MenuList>
-      </Menu>
-      : null }
-</>
+            <MenuList zIndex={'overlay'}>
+              <MenuDivider />
+              <MenuItem onClick={showProfile}> Profile</MenuItem>
+              <MenuDivider />
+              <MenuItem onClick={handleLogout}>Logout</MenuItem>
+            </MenuList>
+        </Menu>
+        : null }
+        </Box>
 
-      {!userDetails &&
-      (<NavLink to="/signin">
-        <li className={styles.login} style={{ height: '40px' }}>
-          <img src={AccountVector} alt="account" width={27} height={10} />
-          Account
-          <BsChevronRight className={styles.right} />
-        </li>
-      </NavLink>) }
+        {!userDetails &&
+        (<NavLink to="/signin">
+          <li className={styles.login} style={{ height: '40px' }}>
+            <img src={AccountVector} alt="account" width={27} height={10} />
+            Account
+            <BsChevronRight className={styles.right} />
+          </li>
+        </NavLink>) }
+    {/* </Stack > */}
     </ul>
   );
 };
