@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import { Outlet } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import FormContextProvider from "./context/FormContext";
+// import FormContextProvider from "./context/FormContext";
 import ScrollToTop from "./utils/scrollToTop";
 import { ChakraProvider } from "@chakra-ui/react";
 
@@ -14,10 +14,10 @@ function App() {
       <ChakraProvider>
       <QueryClientProvider client={queryClient}>
         <Navbar />
-        <FormContextProvider>
+        {/* <FormContextProvider> */}
           <ScrollToTop />
           <Outlet />
-        </FormContextProvider>
+        {/* </FormContextProvider> */}
         <Footer />
       </QueryClientProvider>
       </ChakraProvider>

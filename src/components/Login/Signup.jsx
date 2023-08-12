@@ -61,6 +61,8 @@ const Signup = () => {
           user_name: username,
           full_name: fullname,
           user_id: cred.user.uid,
+          email: email,
+          date_joined: new Date().toDateString(),
         }).then(() => {
           setUsername("");
           setFullname("");
@@ -93,7 +95,6 @@ const Signup = () => {
           isClosable: true,
           position: "top",
         });
-        // Handle any errors that occur during the function calls
       }
     } else {
       toast({

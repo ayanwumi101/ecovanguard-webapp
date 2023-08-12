@@ -34,7 +34,7 @@ const ProfileDrawer = ({setOpenDrawer, currentUser, userDetails}) => {
               placement='right'
               onClose={onClose}
             //   finalFocusRef={btnRef}
-              size='lg'
+              size='md'
               closeOnOverlayClick={false}
           >
               <DrawerOverlay />
@@ -83,9 +83,9 @@ const ProfileDrawer = ({setOpenDrawer, currentUser, userDetails}) => {
                   </DrawerBody>
 
                   <DrawerFooter textAlign='center'>
-                      <Button variant='outline' mx='auto' textAlign='center' w='150px' mr={3} color='white' bg='#00BFB2' fontWeight='medium' fontSize='13px'>
+                      {/* <Button variant='outline' mx='auto' textAlign='center' w='150px' mr={3} color='white' bg='#00BFB2' fontWeight='medium' fontSize='13px'>
                           Verify
-                      </Button>
+                      </Button> */}
                   </DrawerFooter>
 
               </DrawerContent>

@@ -56,9 +56,9 @@ function AboutFirstSection() {
             </Slide>
           </div>
 
-          <Box className="abt-section1-thirdMessage" overflow='hidden'>
+          <Box className="abt-section1-thirdMessage" overflow='hidden' p='2'>
             <Slide right><Heading fontWeight='semibold' fontSize='22px' mb='5'>What We Do</Heading></Slide>
-            <div>
+            <Box>
               <ol>
                 <li>
                   <Slide left><Heading fontWeight='semibold' fontSize='19px' mb='2'>Eco-Education</Heading></Slide>
@@ -116,7 +116,7 @@ function AboutFirstSection() {
                   </Zoom>
                 </li>
               </ol>
-            </div>
+            </Box>
           </Box>
         </div>
       </div>

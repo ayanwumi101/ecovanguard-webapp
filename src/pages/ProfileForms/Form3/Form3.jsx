@@ -2,68 +2,61 @@ import React, { useState, useEffect, useContext } from "react";
 import styles from "./styles.module.css";
 import Alert, { ErrorAlert } from "../FormAlert/Alert";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useFormik } from "formik";
-import * as yup from "yup";
-import { FormContext } from "../../../context/FormContext";
+import {Box, FormLabel, FormControl, Select, Button, Input, Heading, Text, useToast} from '@chakra-ui/react'
+import ConfirmationModal from "../ConfirmationModal";
 
-const Form3 = ({ setStep, step }) => {
-  const [formData, updateForm] = useContext(FormContext);
-  const [submit, setSubmit] = useState(false);
+const Form3 = ({ onNext, onBack, formData, onSubmit, setFormData }) => {
+  const toast = useToast();
+  const [data, setData] = React.useState
+    ({
+      school_name: formData?.school_name,
+      school_location: formData?.school_location,
+      class: formData?.class,
+      admission_year: formData?.admission_year,
+      graduation_year: formData?.admission_year,
+    });
+  const [showModal, setShowModal] = useState(false);
 
-  useEffect(() => {
-    if (formData.school_name && submit) {
-      setStep(3);
-    }
-  }, [formData, submit]);
-
-  const handleStep = () => {
-    setStep(step - 1);
+  const handleChange = (e) => {
+    const { name, value, } = e.target;
+      setData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const formik = useFormik({
-    initialValues: {
-      school_name: "",
-      school_location: "",
-      class: "",
-      admission_year: "",
-      graduation_year: "",
-    },
-    validationSchema: yup.object({
-      school_name: yup.string().required("Please select your school"),
-      school_location: yup
-        .string()
-        .required("Please select your school address"),
-      class: yup.string().required("Please select your class"),
-      admission_year: yup
-        .string()
-        .required("Please select your admission year"),
-      graduation_year: yup
-        .string()
-        .required("Please select your graduation year"),
-    }),
 
-    onSubmit: (values) => {
-      updateForm(values);
-      setSubmit(true);
-    },
-  });
+  const openModal = () => {
+    if (data.school_name && data.school_location && data.class && data.admission_year && data.graduation_year) {
+      setFormData((prevData) => ({ ...prevData, ...data }));
+      setShowModal(true);
+    } else {
+      toast({
+        title: 'Error!',
+        description: "please fill all fields",
+        status: 'error',
+        duration: 2000,
+        isClosable: true,
+        position: 'top'
+      })
+    }
+  }
+
 
   return (
     <div className={styles.details_container}>
+      {showModal && <ConfirmationModal setShowModal={setShowModal} onSubmit={onSubmit} />}
       <div className={styles.heading}>
         <h2>Your Profile</h2>
         <h4>Details with club</h4>
       </div>
 
       <div className={styles.form_container}>
-        <form action="" onSubmit={formik.handleSubmit}>
+        <FormControl action="">
           <div className={styles.form_control}>
-            <label htmlFor="school_name">School Name</label>
-            <select
+            <FormLabel htmlFor="school_name">School Name</FormLabel>
+            <Select
               name="school_name"
               id="school_name"
-              onChange={formik.handleChange}
-              value={formik.values.school_name}
+              onChange={handleChange}
+              value={data.school_name}
             >
               <option value="select your class">Select your school</option>
               <option value="Polythecnic High School">
@@ -71,21 +64,16 @@ const Form3 = ({ setStep, step }) => {
               </option>
               <option value="Al Qalam Schools">Al Qalam Schools</option>
               <option value="As-Sabaq College">As-Sabaq College</option>
-            </select>
-            {formik.errors.school_name ? (
-              <div className={styles.error_text}>
-                {formik.errors.school_name}
-              </div>
-            ) : null}
+            </Select>
           </div>
 
           <div className={styles.form_control}>
-            <label htmlFor="school_location">School's Location</label>
-            <select
+            <FormLabel htmlFor="school_location">School's Location</FormLabel>
+            <Select
               name="school_location"
               id="school_location"
-              value={formik.values.school_location}
-              onChange={formik.handleChange}
+              value={data.school_location}
+              onChange={handleChange}
             >
               <option value="select your position">
                 Select the location of your school
@@ -99,21 +87,16 @@ const Form3 = ({ setStep, step }) => {
               <option value="Olounde estate, Eleyele/Eruwa road, Ologuneru Ibadan">
                 Olounde estate, Eleyele/Eruwa road, Ologuneru Ibadan.
               </option>
-            </select>
-            {formik.errors.school_location ? (
-              <div className={styles.error_text}>
-                {formik.errors.school_location}
-              </div>
-            ) : null}
+            </Select>
           </div>
 
           <div className={styles.form_control}>
-            <label htmlFor="class">Class</label>
-            <select
+            <FormLabel htmlFor="class">Class</FormLabel>
+            <Select
               name="class"
               id="class"
-              onChange={formik.handleChange}
-              value={formik.values.class}
+              onChange={handleChange}
+              value={data.class}
             >
               <option value="select your class">Select your class</option>
               <option value="JSS1">JSS1</option>
@@ -122,19 +105,16 @@ const Form3 = ({ setStep, step }) => {
               <option value="SS1">SS1</option>
               <option value="SS2">SS2</option>
               <option value="SS3">SS3</option>
-            </select>
-            {formik.errors.class ? (
-              <div className={styles.error_text}>{formik.errors.class}</div>
-            ) : null}
+            </Select>
           </div>
 
           <div className={styles.form_control}>
-            <label htmlFor="admission_year">Year of Admission</label>
-            <select
+            <FormLabel htmlFor="admission_year">Year of Admission</FormLabel>
+            <Select
               name="admission_year"
               id="admission_year"
-              onChange={formik.handleChange}
-              value={formik.values.admission_year}
+              onChange={handleChange}
+              value={data.admission_year}
             >
               <option value="select your position">
                 Select your admission year
@@ -148,21 +128,16 @@ const Form3 = ({ setStep, step }) => {
               <option value="2021">2021</option>
               <option value="2022">2022</option>
               <option value="other">Other</option>
-            </select>
-            {formik.errors.admission_year ? (
-              <div className={styles.error_text}>
-                {formik.errors.admission_year}
-              </div>
-            ) : null}
+            </Select>
           </div>
 
           <div className={styles.form_control}>
-            <label htmlFor="graduation_year">Expected Year of Graduation</label>
-            <select
+            <FormLabel htmlFor="graduation_year">Expected Year of Graduation</FormLabel>
+            <Select
               name="graduation_year"
               id="graduation_year"
-              onChange={formik.handleChange}
-              value={formik.values.graduation_year}
+              onChange={handleChange}
+              value={data.graduation_year}
             >
               <option value="select your position">
                 Select your expected graduation year
@@ -174,23 +149,18 @@ const Form3 = ({ setStep, step }) => {
               <option value="2019">2026</option>
               <option value="2020">2027</option>
               <option value="Other">Other</option>
-            </select>
-            {formik.errors.graduation_year ? (
-              <div className={styles.error_text}>
-                {formik.errors.graduation_year}
-              </div>
-            ) : null}
+            </Select>
           </div>
 
           <div className={styles.submit_container}>
-            <button onClick={handleStep}>
-              <FaArrowLeft /> Go Back
-            </button>
-            <button type="submit">
-              Submit <FaArrowRight />
-            </button>
+            <Button onClick={onBack}>
+              <FaArrowLeft style={{marginRight: 5}} /> Go Back
+            </Button>
+            <Button type="submit" onClick={openModal}>
+              Submit <FaArrowRight style={{ marginLeft: 5 }} />
+            </Button>
           </div>
-        </form>
+        </FormControl>
       </div>
     </div>
   );

@@ -4,10 +4,12 @@ import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
-  const location = useLocation()
+  const location = useLocation();
+  const pagesWithoutNavbar = ['/signin', '/signup', '/create_account/secondary_school', '/create_account/higher_institution'];
+  const hideNavbar = pagesWithoutNavbar.includes(location.pathname);
   return (
     <>
-    {location.pathname === '/signin' || '/sinup' &&
+    {!hideNavbar &&
     <footer>
       <div className={styles.contents}>
         <div className="box">

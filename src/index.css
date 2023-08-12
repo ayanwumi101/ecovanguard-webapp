@@ -2,11 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* using !important was a faster way to enforce the font-family for the React-admin framework, don't blame me */
   font-family: Poppins, system-ui, sans-serif !important;
 }
 
-/* base styles */
 :root {
   --heading-1: 1.875rem;
   --heading-2: 1.5rem;
@@ -89,10 +87,10 @@ button:active:not(.no-active) {
   box-shadow: 4px 4px 30px 0 rgba(3, 151, 214, 0.4);
 }
 
-input,
+/* input,
 select {
   padding: 13px 16px;
-}
+} */
 
 textarea:focus,
 input:focus,
@@ -125,7 +123,6 @@ textarea {
   resize: none;
 }
 
-/*  style to add margins around each page content, and add id:nomargin to any element to exclude from margin styles */
 .page__container :not(.no-page-margin) {
   padding: 20px 12px;
 }
