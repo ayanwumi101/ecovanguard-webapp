@@ -1,21 +1,18 @@
 import { Box, Heading, Flex } from '@chakra-ui/react'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import BlogCard from './BlogCard'
+import client from '../../../client'
+import BlockContent from '@sanity/block-content-to-react'
 
-
-const BlogPosts = () => {
+const BlogPosts = ({posts}) => {
+  console.log(posts);
   return (
     <Box>
         <Box mb='5'>
           <Heading fontSize={30}>Recent Articles</Heading>
         </Box>
        <Flex justifyContent='space-between' flexWrap='wrap'>
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+        {posts.map((post) => <BlogCard post={post} />)}
        </Flex>
     </Box>
   )

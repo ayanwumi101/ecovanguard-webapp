@@ -2,29 +2,34 @@ import { Box, Icon, Image, Text, Heading, Stack} from '@chakra-ui/react'
 import React from 'react'
 import { FaBookOpen } from 'react-icons/fa'
 import featuredImage from '../../../assets/illustration.png'
+import { Link } from 'react-router-dom'
 
-const BlogCard = () => {
+
+const BlogCard = ({post}) => {
+  const truncatedBody = post?.body?.[0]?.children[0]?.text.substring(0, 200) + '...';
   return (
-    <Box w='370px' h='540px' borderRadius={16} mb='30px' overflow='auto'>
+    <Link to={`/blog/${post?.slug?.current}`}>
+    <Box w='370px' h='510px' borderRadius={16} mb='30px'>
         <Box>
-            <Image src={featuredImage} borderRadius='16px 16px 0 0' objectFit='cover' w='100%' h='250px' />
+            <Image src={post?.mainImage?.asset?.url} borderRadius='16px 16px 0 0' objectFit='cover' w='100%' h='250px' />
         </Box>
         <Box px='4' py='2'>
-              <Stack direction='row' spacing={3} alignItems='center'>
+              <Stack direction='row' spacing={3} alignItems='center' color='#0397D6'>
                   <Icon as={FaBookOpen} />
                   <Text fontSize={15}>15 Minutes</Text>
               </Stack>
-            <Heading fontSize={20} my='0'>Leading cause of pollution in Nigeria</Heading>
+            <Heading fontSize={20} my='0'>{post.title}</Heading>
             <Text fontSize={15} lineHeight={7}>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta error voluptate illum eligendi ad hic consequuntur incidunt? Non, illum! Doloribus!  adipisicing elit. Soluta
+                {truncatedBody}
             </Text>
             <Stack color='#0397D6' fontSize={15} direction='row' alignItems='center' spacing={3}>
-                  <Text>Oluwapelumi Egunjobi</Text>
+                  <Text>{post?.authorName}</Text>
                   <Box w='5px' h='5px' borderRadius='50%' bg='#0397D6'></Box>
-                  <Text>August 24, 2023.</Text>
+                  <Text>{new Date(post?.publishedAt).toDateString()}</Text>
             </Stack>
         </Box>
     </Box>
+    </Link>
   )
 }
 

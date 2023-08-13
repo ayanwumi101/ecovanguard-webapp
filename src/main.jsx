@@ -18,7 +18,7 @@ import FormOption from "./pages/ProfileForms/FormOption";
 import FormContainer from "./pages/ProfileForms/FormContainer";
 import FormContainer2 from "./pages/ProfileForms/FormContainer2";
 import PasswordReset from "./pages/Reset Password/PasswordReset";
-import SinglePost from "./pages/SinglePost/SinglePost";
+import SinglePost from "./pages/Blog/subpages/PostDetails";
 import Profile from './pages/ProfileForms/Profile/Profile'
 import Members from './pages/Members/Members'
 
