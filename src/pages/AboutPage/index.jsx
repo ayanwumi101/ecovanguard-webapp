@@ -22,7 +22,7 @@ function AboutFirstSection() {
           <Fade left>
           <div className="abt-section1-firstMessage">
             <Heading fontWeight='semibold' fontSize='22px'>About the Club</Heading>
-            <Text fontSize={18} lineHeight={8}>
+            <Text fontSize={16} lineHeight={8} p={[3,0]}>
               EcoVanguard Club is a grassroots student-led club affiliated to
               the Clean Ibadan Ambassadors (CIA) programme. The purpose is to
               educate both the secondary and higher institution students on the
@@ -35,10 +35,10 @@ function AboutFirstSection() {
           </div>
           </Fade>
 
-          <div className="abt-section1-secondMessage">
+          <Box className="abt-section1-secondMessage" p={[2, 0]}>
             <Zoom><Heading fontWeight='semibold' fontSize='22px' mb='4'>Club Objectives</Heading></Zoom>
             <Slide left>
-            <ol style={{fontSize: '18px'}}>
+            <ol style={{fontSize: '16px',}}>
               <li>
                 Increase awareness among students and staff of the school on
                 environmental issues.
@@ -54,7 +54,7 @@ function AboutFirstSection() {
               </li>
             </ol>
             </Slide>
-          </div>
+          </Box>
 
           <Box className="abt-section1-thirdMessage" overflow='hidden' p='2'>
             <Slide right><Heading fontWeight='semibold' fontSize='22px' mb='5'>What We Do</Heading></Slide>
@@ -63,7 +63,7 @@ function AboutFirstSection() {
                 <li>
                   <Slide left><Heading fontWeight='semibold' fontSize='19px' mb='2'>Eco-Education</Heading></Slide>
                   <Zoom>
-                  <Text fontSize={18} lineHeight={8}>
+                  <Text fontSize={16} lineHeight={8}>
                     An eco-friendly environment should be paramount to
                     everybody. As such, we enlighten and educate individuals and
                     students on the importance of maintaining a greener
@@ -78,7 +78,7 @@ function AboutFirstSection() {
                 <li>
                   <Slide left><Heading fontWeight='semibold' mb='2' fontSize='19px'>Environmental Reformation</Heading></Slide>
                   <Zoom>
-                  <Text fontSize={18} lineHeight={8}>
+                  <Text fontSize={16} lineHeight={8}>
                     Environmental degradation in the world is becoming more
                     rampant and conscious efforts are expected to be taken in
                     order to eliminate this and reform the environment.
@@ -93,7 +93,7 @@ function AboutFirstSection() {
                 <li>
                   <Slide left><Heading fontWeight='semibold' mb='2' fontSize='19px'>Waste Management</Heading></Slide>
                   <Zoom>
-                    <Text fontSize={18} lineHeight={8}>
+                    <Text fontSize={16} lineHeight={8}>
                       Suitable waste management practices have become challenging
                       due to our consumption behaviour and changing socioeconomic
                       condition. We therefore educate the public on the best
@@ -106,7 +106,7 @@ function AboutFirstSection() {
                 <li>
                   <Slide left><Heading fontWeight='semibold' mb='2' fontSize='19px'>General Earth Advocacy</Heading></Slide>
                   <Zoom>
-                    <Text fontSize={18} lineHeight={8}>
+                    <Text fontSize={16} lineHeight={8}>
                       Greener Earth is our main focus and can be best achieved by
                       collective efforts. We advocate for a greener environment
                       free from dangerous gases, polluted air, poisonous water and
@@ -129,23 +129,23 @@ function AboutSecondSection() {
     <Box className="abt-section2-wrapper" mb='8' overflow='hidden'>
       <Fade right>
       <div className="abt-section2-container">
-        <div className="abt-section2-card">
+        <Box className="abt-section2-card" p={[3, 0]}>
           {/* <img src={ourMissionLogo} alt="Our Mission" /> */}
           <Heading className="our-mission" mb='3' fontWeight='semibold' fontSize={25}>Our Mission</Heading>
-            <Text className="card-message" fontSize={18} lineHeight={8}>
+            <Text className="card-message" fontSize={16} lineHeight={8}>
             To make the environment an enabling one foe all and sundry through
             wider advocacy and strict compliance.
           </Text>
-        </div>
+        </Box>
 
-        <div className="abt-section2-card">
+        <Box className="abt-section2-card" p={[3, 0]}>
           {/* <img src={ourVisionLogo} alt="Our Vision" /> */}
           <Heading className="our-vision" mb='3' fontWeight='semibold' fontSize={25}>Our Vision</Heading>
-          <Text className="card-message" fontSize={18} lineHeight={8}>
+          <Text className="card-message" fontSize={16} lineHeight={8}>
             To be the world class changing club in maintaining a healthy
             environment while building a perfect only one earth.{" "}
           </Text>
-        </div>
+        </Box>
       </div>
       </Fade>
     </Box>

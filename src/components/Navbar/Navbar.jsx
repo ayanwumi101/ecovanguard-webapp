@@ -11,14 +11,18 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
-  useToast, Image, Stack
+  useToast, Image, Stack, Flex, List,
+  ListItem,
+  ListIcon,
+  OrderedList,
+  UnorderedList, Icon
 } from "@chakra-ui/react";
 import { signOut, getAuth } from 'firebase/auth'
 import { getFirestore, query, where, getDocs, collection, } from 'firebase/firestore'
 import ProfileDrawer from "../Drawer/ProfileDrawer";
 import {BiMenu} from 'react-icons/bi'
 import {HiOutlineLogout} from 'react-icons/hi'
-import {FaUserTag, FaUserTie, FaUserCog, FaUserLock, FaUsers} from 'react-icons/fa'
+import {FaUserTag, FaUserTie, FaUserCog, FaUserLock, FaUsers, FaLinkedinIn, FaLinkedin, FaTwitter, FaInstagram, FaWhatsapp, FaFacebook} from 'react-icons/fa'
 import {MdManageAccounts} from 'react-icons/md'
 import { set } from "date-fns";
 
@@ -70,18 +74,66 @@ const SideNav = ({ setShowSidebar }) => {
     <>
       <div className={styles.sidenav_modal}>
         <div className={styles.sidenav_container}>
-          <span
-            className={styles.sidenav_btn}
-            onClick={() => setShowSidebar(false)}
-          >
-            <VscChromeClose className={styles.close_icon} />
-          </span>
-          <LinkList onClick={() => setShowSidebar(false)} />
+          <Stack direction='column' justifyContent='space-between' h='100%'>
+            <Box>
+                <Flex alignItems='center' justifyContent='space-between' w='92%' mx='auto'>
+                  <Link to="/" onClick={() => setShowSidebar(false)}>
+                    <div className={styles.brand}>
+                      <Image src={logo} alt="EcoVanguard Logo" className={styles.logo} />
+                    </div>
+                  </Link>
+                  <span
+                    className={styles.sidenav_btn}
+                    onClick={() => setShowSidebar(false)}
+                  >
+                    <VscChromeClose className={styles.close_icon} />
+                  </span>
+                </Flex>
+                <Box w='100%' h='0.5px' bg='lightgray' my='1'></Box>
+                <SideNavLinks setShowSidebar={setShowSidebar} />
+            </Box>
+
+            <Box borderTop='1px solid lightgray' borderBottom='1px solid lightgray' h='70px'>
+              <Stack direction='row' alignItems='center'>
+                <Box as='a' href='https://twitter.com' onClick={() => setShowSidebar(false)} target="_blank" borderRight='1px solid lightgray' w='71px' h='70px' display='flex' alignItems='center' justifyContent='center' _hover={{bg: 'lightgray'}}>
+                    <Icon as={FaTwitter} fontSize={30} color='#0397d6' />
+                  </Box>
+                  <Box as='a' target='_blank' href='https://instagram.com' onClick={() => setShowSidebar(false)} borderRight='1px solid lightgray' w='71px' h='70px' display='flex' alignItems='center' justifyContent='center' _hover={{ bg: 'lightgray' }}>
+                    <Icon as={FaInstagram} fontSize={30} color='#0397d6' />
+                  </Box>
+                  <Box as='a' target='_blank' href='https://linkedin.com' borderRight='1px solid lightgray' onClick={() => setShowSidebar(false)} w='71px' h='70px' display='flex' alignItems='center' justifyContent='center' _hover={{ bg: 'lightgray' }}>
+                    <Icon as={FaLinkedin} fontSize={30} color='#0397d6' />
+                  </Box>
+                  <Box as='a' target='_blank' href='https://wa.me/+2348127671686' borderRight='1px solid lightgray' onClick={() => setShowSidebar(false)} w='71px' h='70px' display='flex' alignItems='center' justifyContent='center' _hover={{ bg: 'lightgray' }}>
+                    <Icon as={FaWhatsapp} fontSize={30} color='#0397d6' />
+                  </Box>
+                  <Box as='a' target="_blank" href='https://facebook.com' w='70px' h='70px' display='flex' onClick={() => setShowSidebar(false)} alignItems='center' justifyContent='center' _hover={{ bg: 'lightgray' }}>
+                    <Icon as={FaFacebook} fontSize={30} color='#0397d6' />
+                  </Box>
+              </Stack>
+            </Box>
+          </Stack>
         </div>
       </div>
     </>
   );
 };
+
+
+export const SideNavLinks = ({setShowSidebar}) => {
+  return (
+    <Box w='100%'>
+      <Stack fontSize={18}>
+        <Link to='/about' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>About Us</Text></Link>
+        <Link to='/projects' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Projects</Text></Link>
+        <Link to='/donate' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Donate</Text></Link>
+        <Link to='/blog' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Blog</Text></Link>
+        <Link to='/contact' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Contact Us</Text></Link>
+        <Link to='/signin' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Account</Text></Link>
+      </Stack>
+    </Box>
+  )
+}
 
 
 const LinkList = () => {

@@ -26,7 +26,7 @@
 .abt-section2-container {
   padding: var(--container-padding);
   display: flex;
-  gap: 4rem;
+  /* gap: 4rem; */
   justify-content: space-between;
   align-items: center;
 }

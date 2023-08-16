@@ -48,7 +48,7 @@ export const HeroSection = ({singlePost}) => {
             backgroundSize='cover'
             backgroundPosition='center'
             w='100%'
-            h={[470, 450]}
+            h={[480, 480]}
             display='flex'
             alignItems='center'
             justifyContent='center'
@@ -86,16 +86,16 @@ export const PostBody = ({singlePost}) => {
                 <Box>
                     <Text my='0'>Written by:</Text>
                     <Text my='0' fontWeight='medium'>{singlePost?.authorName}</Text>
-                    <Text my='0' fontWeight='medium'>{new Date(singlePost?.publishedAt).toDateString()}</Text>
+                    <Text my='0'>{new Date(singlePost?.publishedAt).toDateString()}</Text>
                 </Box>
                 <Box>
                     <Stack direction={['column', 'row']} alignItems='center' spacing={5}>
                         <Text my='0' fontWeight='medium'>Share this article</Text>
                         <Stack direction='row' spacing={3} color='#0397D6'>
-                            <Icon as={FaTwitter} />
-                            <Icon as={FaInstagram} />
-                            <Icon as={FaLinkedin} />
-                            <Icon as={FaWhatsapp} />
+                            <Icon as={FaTwitter} fontSize={20} />
+                            <Icon as={FaInstagram} fontSize={20} />
+                            <Icon as={FaLinkedin} fontSize={20} />
+                            <Icon as={FaWhatsapp} fontSize={20} />
                         </Stack>
                     </Stack>
                 </Box>

@@ -26,7 +26,7 @@ import {
   Text,
   Heading,
   FormLabel,
-  Box,
+  Box, Spinner
 } from "@chakra-ui/react";
 
 const Signup = () => {
@@ -38,6 +38,7 @@ const Signup = () => {
   const db = getFirestore(app);
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const toast = useToast();
 
@@ -46,10 +47,18 @@ const Signup = () => {
     // navigate("/")
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("clicked");
     if (username && fullname && email && password) {
+      setLoading(true);
       try {
         const cred = await createUserWithEmailAndPassword(
           auth,
@@ -75,7 +84,9 @@ const Signup = () => {
 
         await sendEmailVerification(cred.user).then(() => {
           console.log("email sent");
-        });
+        }).then(() => {
+          setLoading(false);
+        })
 
         toast({
           title: "Account created.",
@@ -95,6 +106,7 @@ const Signup = () => {
           isClosable: true,
           position: "top",
         });
+        setLoading(false);
       }
     } else {
       toast({
@@ -134,6 +146,7 @@ const Signup = () => {
                     value={username}
                     placeholder="Input your username"
                     required
+                    onKeyDown={handleKeyPress}
                   />
                 </Box>
 
@@ -147,6 +160,7 @@ const Signup = () => {
                     value={fullname}
                     placeholder="Input your Full name"
                     required
+                    onKeyDown={handleKeyPress}
                   />
                 </Box>
 
@@ -159,6 +173,7 @@ const Signup = () => {
                     value={email}
                     placeholder="Input your active e-mail"
                     required
+                    onKeyDown={handleKeyPress}
                   />
                 </Box>
                 <Box mb="3">
@@ -172,6 +187,7 @@ const Signup = () => {
                     value={password}
                     placeholder="Input your password"
                     required
+                    onKeyDown={handleKeyPress}
                   />
                 </Box>
               </Box>
@@ -190,7 +206,7 @@ const Signup = () => {
                   color="white"
                   onClick={handleSubmit}
                 >
-                  Sign up
+                  {loading ? <Spinner /> : "Sign up"}
                 </Button>
               </div>
             </form>
@@ -233,6 +249,7 @@ export const Login = () => {
   const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
   const toast = useToast();
+  const [loading, setLoading] = useState(false);
 
   // auth.onAuthStateChanged((user) => {
   //   return setUser(user);
@@ -240,12 +257,15 @@ export const Login = () => {
 
   const handleSubmit = async () => {
     if (email && password) {
+      setLoading(true);
       try {
         await signInWithEmailAndPassword(auth, email, password).then(() => {
           setEmail("");
           setPassword("");
           navigate("/");
-        });
+        }).then(() => {
+          setLoading(false);
+        })
         toast({
           title: "Login Successful.",
           description: "successfully logged in!.",
@@ -256,7 +276,6 @@ export const Login = () => {
           position: "top-right",
         });
       } catch (error) {
-        console.log(error.message);
         toast({
           title: "Error!",
           description: error.message,
@@ -265,6 +284,7 @@ export const Login = () => {
           isClosable: true,
           position: "top",
         });
+        setLoading(false);
       }
     } else {
       toast({
@@ -283,6 +303,13 @@ export const Login = () => {
     signInWithRedirect(auth, provider);
     // navigate("/")
   };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      handleSubmit();
+    }
+  }
 
   return (
     <>
@@ -309,6 +336,7 @@ export const Login = () => {
                       value={email}
                       placeholder="Input your active e-mail"
                       required
+                      onKeyDown={handleKeyPress}
                     />
                   </Box>
                   <Box mb="3">
@@ -322,6 +350,7 @@ export const Login = () => {
                       value={password}
                       placeholder="Input your password"
                       required
+                      onKeyDown={handleKeyPress}
                     />
                   </Box>
                 </Box>
@@ -332,7 +361,7 @@ export const Login = () => {
                     color="white"
                     onClick={handleSubmit}
                   >
-                    Sign in
+                    {loading ? <Spinner /> : "Sign in"}
                   </Button>
                 </div>
                 {/* <div>

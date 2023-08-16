@@ -55,29 +55,29 @@ function SecondSection(props) {
             <Slide left>
             <div className="sect2-msg msg1">
               <Image src={logo1} display='block' mx='auto' mb='4' alt="icon for education" />
-              <div>
-                <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={32}>Education</Heading>
-                  <Text fontSize={18} textAlign='justify' lineHeight={8}>
+              <Box p={[2,0]}>
+                <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Education</Heading>
+                  <Text fontSize={16} lineHeight={8}>
                   We educate secondary school and tertiary institution students
                   on the importance of proper waste management practices and
                   advocate for an eco-friendly environment and the
                   implementation of a circular economy.
                 </Text>
-              </div>
+              </Box>
             </div>
             </Slide>
 
             <Slide right>
             <div className="sect2-msg msg2">
               <Image src={logo2} alt="" display='block' mx='auto' mb='4' />
-              <div>
-                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={32}>Waste Management</Heading>
-                  <Text lineHeight={8} textAlign='justify' fontSize={18}>
+              <Box p={[2,0]}>
+                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Waste Management</Heading>
+                  <Text lineHeight={8} fontSize={16}>
                   We advocate having a clean city which in turn leads to having
                   a greener earth leading to an eco-friendly environment and the
                   implementation of a circular economy.
                 </Text>
-              </div>
+              </Box>
             </div>
             </Slide>
 
@@ -87,29 +87,29 @@ function SecondSection(props) {
           <Slide left>
             <div className="sect2-msg msg3">
               <Image src={logo1} alt="" display='block' mx='auto' mb='4' />
-              <div>
-                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={32}>Education</Heading>
-                  <Text textAlign='justify' lineHeight={8} fontSize={18}>
+                <Box p={[2, 0]}>
+                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Education</Heading>
+                  <Text lineHeight={8} fontSize={16}>
                   We educate secondary school and tertiary institution students
                   on the importance of proper waste management practices and
                   advocate for an eco-friendly environment and the
                   implementation of a circular economy.
                 </Text>
-              </div>
+              </Box>
             </div>
           </Slide>
 
             <Slide right>
             <div className="sect2-msg msg4">
               <Image src={logo2} alt="" display='block' mx='auto' mb='4' />
-              <div>
-                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={32}>Waste Management</Heading>
-                  <Text textAlign='justify' lineHeight={8} fontSize={18}>
+              <Box p={[2,0]}>
+                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Waste Management</Heading>
+                  <Text lineHeight={8} fontSize={16}>
                   We advocate having a clean city which in turn leads to having
                   a greener earth leading to an eco-friendly environment and the
                   implementation of a circular economy.
                 </Text>
-              </div>
+              </Box>
             </div>
             </Slide>
           </div>
@@ -232,13 +232,13 @@ function NewsletterComponent() {
       <Fade right>
         <Stack>
           <Box mb='2'>
-            <Text style={{ color: "#3a3a3a" }} mb='3' fontSize={18}>
+            <Text style={{ color: "#3a3a3a" }} mb='3' fontSize={16} p={[2, 0]}>
               Subscribe to our newsletter to get the latest update about nature and
               the ecosystem
             </Text>
           </Box>
 
-          <Stack direction={['column', 'row']} w={['350px', '550px']} mx='auto' spacing={[4, 0]}>
+          <Stack direction={['column', 'row']} w={['320px', '550px']} mx='auto' spacing={[4, 0]}>
             <Input
               type="email"
               placeholder="e.g ecovanguard@gmail.com"

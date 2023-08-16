@@ -22,16 +22,16 @@ function ImgMsgBtn({
     <Box w='80%' mx='auto' mb={[14, 20]}>
           <Stack direction={['column-reverse', 'row']} justifyContent='space-between' alignItems='center'>
             <Zoom>
-            <Box className={styles.section_img} mb='3' w={['350px', '500px']}>
+            <Box className={styles.section_img} mb='3' w={['320px', '500px']}>
                 <Image src={image} alt="Waste Disposal" w='100%' />
               </Box>
             </Zoom>
 
             <Slide left>
-              <Box className={styles.msgBody} mb='4' overflow='hidden' w={['350px', '500px']}>
+              <Box className={styles.msgBody} mb='4' overflow='hidden' w={['320px', '500px']}>
                 <Heading fontSize={[28, 30]} textAlign='center'>{msgHeader}</Heading>
-                <Text mb='3' fontSize={18} lineHeight={9}>{msgBody1}</Text>
-                <Text mb='3' fontSize={18} lineHeight={9}>
+                <Text mb='3' fontSize={16} lineHeight={9}>{msgBody1}</Text>
+                <Text mb='3' fontSize={16} lineHeight={9}>
                   {msgBody2} <a href="#">{criteria}</a>
                 </Text>
                 <Box mx='auto'>

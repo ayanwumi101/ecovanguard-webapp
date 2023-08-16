@@ -60,10 +60,11 @@ li{
 }
 
 .sidenav_container {
-  width: 70vw;
-  padding-top: 30px;
+  width: 100vw;
+  padding-top: 15px;
   height: 100%;
-  background: #e1ffd2;
+  /* background: #e1ffd2; */
+  background-color: white;
   overflow-x: hidden;
   position: absolute;
   transition: 1.5s;
@@ -82,9 +83,11 @@ li{
 }
 
 .sidenav_btn {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  right: 0;
+  right: 0; */
+  /* padding: 8px; */
+  border-radius: 8px;
 }
 
 .sidenav_btn:hover {

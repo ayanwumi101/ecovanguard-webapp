@@ -137,11 +137,11 @@ const Projects = () => {
 
             <Fade right>
             <div className={styles.project_description}>
-              <Text mb='3' fontSize={17} lineHeight={8}>
+              <Text mb='3' fontSize={16} lineHeight={8} p={[2, 0]}>
                 EcoVanguard in a bid to create a greener earth by ensuring
                 proper waste management and educating the future generations.
               </Text>
-              <Text mb='3' fontSize={17} lineHeight={8}>
+              <Text mb='3' fontSize={16} lineHeight={8} p={[2, 0]}>
                 We have successfully completed a total of 19 projects to aid
                 proper waste management in our communities and the impact of
                 these projects are being felt in the society.

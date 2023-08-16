@@ -90,11 +90,11 @@ const Contact = () => {
     <Box w={['90%', '80%']} mx='auto'>
        <Box maxW='500px' mx='auto' textAlign='center' my='10'>
         <Zoom>
-          <Heading mb="5">Contact Us</Heading>
+          <Heading mb="5" fontSize={30}>Contact Us</Heading>
         </Zoom>
 
         <Fade left>
-          <Text fontSize={18} lineHeight={8}>
+          <Text fontSize={16} lineHeight={8}>
             In doubt of any issue or want to lodge a complaint? Or do you simply
             want to inform us? Let us know what you think. We would love to hear
             from you.{" "}

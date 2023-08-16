@@ -24,10 +24,10 @@ function ImgMsgBtn({
       <div className={styles.section_container}>
         <div className={styles.section_message}>
           <Box className={styles.msgBody} mb="4" maxW="500px">
-            <Text textAlign="justify" fontSize={18} lineHeight={9}>
+            <Text textAlign="justify" fontSize={16} lineHeight={9}>
               {msgBody1}
             </Text>
-            <Text>
+            <Text fontSize={16}>
               {msgBody2} <a href="#">{criteria}</a>
             </Text>
           </Box>

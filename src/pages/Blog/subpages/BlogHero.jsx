@@ -12,7 +12,7 @@ const BlogHero = ({posts}) => {
         backgroundSize='cover' 
         backgroundPosition='center' 
         w='100%' 
-        h={[470, 450]} 
+        h={[470, 500]} 
         display='flex'
         alignItems='center'
         justifyContent='center'
