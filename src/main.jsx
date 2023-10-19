@@ -13,7 +13,7 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Contact from "./pages/contact/";
 import Location from "./pages/location/index";
-import Donate from "./pages/Donate/Donate";
+import Donate from "./pages/Donate";
 import FormOption from "./pages/ProfileForms/FormOption";
 import FormContainer from "./pages/ProfileForms/FormContainer";
 import FormContainer2 from "./pages/ProfileForms/FormContainer2";
@@ -21,6 +21,8 @@ import PasswordReset from "./pages/Reset Password/PasswordReset";
 import SinglePost from "./pages/Blog/subpages/PostDetails";
 import Profile from './pages/ProfileForms/Profile/Profile'
 import Members from './pages/Members/Members'
+import Projects from './pages/projects'
+import Publications from './pages/Publications'
 
 // lazy loaded routes
 const Executive = withLazyComponent(
@@ -30,9 +32,6 @@ const Partner = withLazyComponent(lazy(() => import("./pages/partner")));
 
 const Blog = withLazyComponent(lazy(() => import("./pages/Blog")));
 
-const Projects = withLazyComponent(
-  lazy(() => import("./pages/projects/projects"))
-);
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -58,6 +57,7 @@ root.render(
           <Route path="password" element={<PasswordReset />} />
           <Route path="projects" element={<Projects />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="publications" element={<Publications />} />
           <Route path="registered_members" element={<Members />} />
           {/* profile form pages  */}
           <Route exact path="create_account" element={<FormOption />} />

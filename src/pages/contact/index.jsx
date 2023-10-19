@@ -87,7 +87,7 @@ const Contact = () => {
 
 
   return (
-    <Box w={['90%', '80%']} mx='auto'>
+    <Box w={['90%', '80%']} mx='auto' mb='10'>
        <Box maxW='500px' mx='auto' textAlign='center' my='10'>
         <Zoom>
           <Heading mb="5" fontSize={30}>Contact Us</Heading>

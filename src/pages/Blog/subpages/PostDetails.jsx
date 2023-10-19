@@ -1,14 +1,16 @@
-import { Box, Heading, Stack, Text, Icon } from '@chakra-ui/react'
+import { Box, Heading, Stack, Text, Icon, Flex, Image } from '@chakra-ui/react'
 import BlockContent from '@sanity/block-content-to-react'
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import client from '../../../client'
 import { FaBookOpen, FaTwitter, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import BlogCard from './BlogCard'
 
 const PostDetails = ({posts}) => {
     const {slug} = useParams();
     const [singlePost, setSinglePost] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [blogPosts, setBlogPosts] = useState([]);
 
     useEffect(() => {
         client.fetch(
@@ -30,10 +32,36 @@ const PostDetails = ({posts}) => {
         setLoading(false)
     }, [slug]);
 
+
+    useEffect(() => {
+        client
+            .fetch(
+                `*[_type == 'post']{
+          title,
+          slug,
+          body,
+          publishedAt,
+          mainImage{
+            asset->{
+              _id,
+              url
+            },
+            alt
+          },
+          "authorName": author -> name,
+          "authorImage": author -> image.asset -> url,
+        }`
+            )
+            .then((data) => setBlogPosts(data))
+            .catch(console.error);
+    }, []);
+
+
   return (
     <Box>
         <HeroSection singlePost={singlePost} />
         <PostBody singlePost={singlePost} />
+        <OtherPosts blogPosts={blogPosts} slug={slug} />
     </Box>
   )
 }
@@ -79,7 +107,7 @@ export const HeroSection = ({singlePost}) => {
 
 export const PostBody = ({singlePost}) => {
     return (
-        <Box w='85%' mx='auto' lineHeight={8} fontSize={16}>
+        <Box w='85%' mx='auto' lineHeight={8} fontSize={16} mb='12'>
             <BlockContent blocks={singlePost?.body} projectId='vyd7qavh' dataset='production' />
             <Box w='100%' mx='auto' my='8' h='1px' bg='gray'></Box>
             <Stack direction='row' alignItems={['flex-start', 'center']} justifyContent='space-between'>
@@ -100,6 +128,49 @@ export const PostBody = ({singlePost}) => {
                     </Stack>
                 </Box>
             </Stack>
+        </Box>
+    )
+}
+
+
+export const OtherPosts = ({blogPosts, slug}) => {
+    const filteredPosts = blogPosts.filter((post) => post.slug.current !== slug);
+    return (
+        <Box w={['100%', '85%']} mx='auto'>
+        <Box mb='7' textAlign={['center', 'left']}>
+            <Heading fontSize={[25, 30]}>Check these articles.</Heading>
+        </Box>
+        <Box display='flex' mx='auto' justifyContent='space-between' alignItems='center' overflowX='auto' gap={10}>
+                {filteredPosts.map((post) => {
+                    const truncatedBody = post?.body?.[0]?.children[0]?.text.substring(0, 120) + '...';
+                    return (
+                    <Box w='350px' h='490px' borderRadius={16} mb='40px' boxShadow='lg'>
+                        <Link to={`/blog/${post?.slug?.current}`}>
+                            <Box w='350px'>
+                                <Image src={post?.mainImage?.asset?.url} borderRadius='16px 16px 0 0' objectFit='cover' w='100%' h='250px' />
+                            </Box>
+                            <Box px='4' py='2'>
+                                <Stack direction='row' spacing={3} alignItems='center' color='#0397D6'>
+                                    <Icon as={FaBookOpen} />
+                                    <Text fontSize={15}>15 Minutes</Text>
+                                </Stack>
+                                <Heading fontSize={20} my='0'>{post.title.substring(0, 31)}...</Heading>
+                                <Box mb='2'>
+                                    <Text fontSize={15} lineHeight={7}>
+                                        {truncatedBody}
+                                    </Text>
+                                </Box>
+                                <Stack color='#0397D6' fontSize={15} direction='row' alignItems='center' spacing={3}>
+                                    <Text>{post?.authorName}</Text>
+                                    <Box w='5px' h='5px' borderRadius='50%' bg='#0397D6'></Box>
+                                    <Text>{new Date(post?.publishedAt).toDateString()}</Text>
+                                </Stack>
+                            </Box>
+                        </Link>
+                    </Box>)
+                }
+                )}
+        </Box>
         </Box>
     )
 }

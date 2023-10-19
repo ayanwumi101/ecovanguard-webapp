@@ -228,7 +228,7 @@ function FourthSection() {
 }
 function NewsletterComponent() {
   return (
-    <div className="center">
+    <Box mb='10' className="center">
       <Fade right>
         <Stack>
           <Box mb='2'>
@@ -254,7 +254,7 @@ function NewsletterComponent() {
        </Flex>
       </Box> */}
       </Fade>
-    </div>
+    </Box>
   );
 }
 const HomePage = () => {
