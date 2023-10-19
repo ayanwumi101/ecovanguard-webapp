@@ -42,7 +42,7 @@ export const ExecutedProjectCards = ({image, heading, institution, text}) => {
   return (
     <Box w='370px' minH='500px' borderRadius={5} mb='40px' boxShadow='lg'>
       {/* <Link to={`/blog/${post?.slug?.current}`}> */}
-        <Box w={['350px', '370px']}>
+        <Box w={['310px', '370px']}>
           <Image src={image} borderRadius='16px 16px 0 0' objectFit='cover' w='100%' h='250px' />
         </Box>
         <Box px='5' py='6'>

@@ -137,16 +137,16 @@ export const OtherPosts = ({blogPosts, slug}) => {
     const filteredPosts = blogPosts.filter((post) => post.slug.current !== slug);
     return (
         <Box w={['100%', '85%']} mx='auto'>
-        <Box mb='7' textAlign={['center', 'left']}>
+        <Box mb='7'>
             <Heading fontSize={[25, 30]}>Check these articles.</Heading>
         </Box>
         <Box display='flex' mx='auto' justifyContent='space-between' alignItems='center' overflowX='auto' gap={10}>
                 {filteredPosts.map((post) => {
                     const truncatedBody = post?.body?.[0]?.children[0]?.text.substring(0, 120) + '...';
                     return (
-                    <Box w='350px' h='490px' borderRadius={16} mb='40px' boxShadow='lg'>
+                    <Box w='300px' h='490px' borderRadius={16} mb='40px' boxShadow='lg'>
                         <Link to={`/blog/${post?.slug?.current}`}>
-                            <Box w='350px'>
+                            <Box w='300px'>
                                 <Image src={post?.mainImage?.asset?.url} borderRadius='16px 16px 0 0' objectFit='cover' w='100%' h='250px' />
                             </Box>
                             <Box px='4' py='2'>
