@@ -14,25 +14,25 @@ import polyLogo from "../../assets/poly-high.jpg";
 import fmeeLogo from "../../assets/fmee.jpg";
 import Modal from "./modal";
 import { Box, Heading, Text, Stack, HStack, Flex, Image } from "@chakra-ui/react";
-import { Zoom, Slide, Fade } from "react-reveal";
+
 
 const Partner = () => {
   return (
     <section>
       <div className="partner__bg-image">
-        <Zoom>
+        {/* <Zoom> */}
           <h4 className="heading">partners of nature</h4>
-        </Zoom>
+        {/* </Zoom> */}
         <Modal />
       </div>
       <main className="partners">
-        <Zoom>
+        {/* <Zoom> */}
           <Heading className="center" mt="8">
             Our Partners
           </Heading>
-        </Zoom>
+        {/* </Zoom> */}
         <Box className="partners__grid" maxW="850px" mx="auto" mt="10">
-          <Fade left>
+          {/* <Fade left> */}
             <Stack
               direction={['column', 'row']}
               spacing={6}
@@ -59,9 +59,9 @@ const Partner = () => {
                 <Text>Governmental Body</Text>
               </div>
             </Stack>
-          </Fade>
+          {/* </Fade> */}
 
-          <Fade right>
+          {/* <Fade right> */}
             <Box
               mb="6"
               className="partners__grid__box"
@@ -82,8 +82,8 @@ const Partner = () => {
                 <Text>Professionals Association</Text>
               </div>
             </Box>
-          </Fade>
-<Fade left>
+          {/* </Fade> */}
+{/* <Fade left> */}
           <Box
             mb="6"
             className="partners__grid__box"
@@ -104,9 +104,9 @@ const Partner = () => {
               <Text>Environmental protection Agency</Text>
             </div>
           </Box>
-          </Fade>
+          {/* </Fade> */}
 
-          <Fade right>
+          {/* <Fade right> */}
           <Box
             mb="6"
             className="partners__grid__box"
@@ -127,9 +127,9 @@ const Partner = () => {
               <Text>Waste management organisation</Text>
             </div>
           </Box>
-          </Fade>
+          {/* </Fade> */}
 
-<Fade left>
+{/* <Fade left> */}
           <Box
             mb="6"
             className="partners__grid__box"
@@ -150,9 +150,9 @@ const Partner = () => {
               <Text>Nigerian University</Text>
             </div>
           </Box>
-          </Fade>
+          {/* </Fade> */}
 
-          <Fade right>
+          {/* <Fade right> */}
           <Box
             mb="6"
             className="partners__grid__box"
@@ -173,9 +173,9 @@ const Partner = () => {
               <Text>Nigerian University</Text>
             </div>
           </Box>
-          </Fade>
+          {/* </Fade> */}
 
-          <Fade left>
+          {/* <Fade left> */}
           <Box
             mb="6"
             className="partners__grid__box"
@@ -196,9 +196,9 @@ const Partner = () => {
               <Text>Professionals Association</Text>
             </div>
           </Box>
-          </Fade>
+          {/* </Fade> */}
 
-          <Fade right>
+          {/* <Fade right> */}
           <Box
             mb="6"
             className="partners__grid__box"
@@ -219,14 +219,14 @@ const Partner = () => {
               <Text>Governmental Body</Text>
             </div>
           </Box>
-          </Fade>
+          {/* </Fade> */}
         </Box>
         <aside className="partners__list">
           <Heading className="center" mt="10" mb="8">
             All Partners
           </Heading>
 
-          <Zoom>
+          {/* <Zoom> */}
           <section>
             <Heading fontSize="25px" fontWeight="medium" mb="3">
               Education
@@ -262,9 +262,9 @@ const Partner = () => {
               />
             </Flex>
           </section>
-          </Zoom>
+          {/* </Zoom> */}
 
-          <Zoom>
+          {/* <Zoom> */}
           <section>
             <Heading fontSize="25px" fontWeight="medium" mb="3" mt="8">
               Governmental Bodies
@@ -293,9 +293,9 @@ const Partner = () => {
               />
             </Flex>
           </section>
-          </Zoom>
+          {/* </Zoom> */}
 
-          <Zoom>
+          {/* <Zoom> */}
           <section>
             <Heading fontSize="25px" fontWeight="medium" mb="7">
               Non-governmental Organisations
@@ -331,7 +331,7 @@ const Partner = () => {
               />
             </Flex>
           </section>
-          </Zoom>
+          {/* </Zoom> */}
 
         </aside>
       </main>
