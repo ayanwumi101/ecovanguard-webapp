@@ -1,7 +1,7 @@
 import React from "react";
 import DialogComponent from "../../components/Dialog";
 import "./modal.css";
-import {Zoom} from 'react-reveal'
+
 
 // to ensure the image src passed as a prop from executive.js maintains a valid import in this file, I didn't create a folder for the modal.js and modal.css files
 import ButtonLink from "../../components/Button/button";
@@ -28,7 +28,7 @@ const ModalComponent = ({
           label="EcoVanguard club's executives details"
           closeDialog={closeModal}
         >
-          <Zoom>
+          {/* <Zoom> */}
           <div className="dialog__container">
             <Box className="dialog__img" mb='5'>
               <Image src={executiveData.src} alt={Alt} width={400} height={300} mb='3' display='block' mx='auto' borderRadius={10} />
@@ -48,7 +48,7 @@ const ModalComponent = ({
           <div className="center">
             <Button bg='#0397d6' size='lg' color='white' onClick={closeModal}>Close</Button>
           </div>
-          </Zoom>
+          {/* </Zoom> */}
         </DialogComponent>
       )}
     </>
