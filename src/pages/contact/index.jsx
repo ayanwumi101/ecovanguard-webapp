@@ -5,9 +5,9 @@ import InputComponent from "../../components/Input/input";
 import ButtonLink from "../../components/Button/button";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Heading, Box, Text, Input, Button, FormLabel, Textarea, useToast, Checkbox, Spinner, Image, Stack } from "@chakra-ui/react";
-import Fade from 'react-reveal/Fade'
-import Zoom from "react-reveal/Zoom";
-import Slide from "react-reveal/Slide";
+// import Fade from 'react-reveal/Fade'
+// import Zoom from "react-reveal/Zoom";
+// import Slide from "react-reveal/Slide";
 import axios from 'axios'
 
 const Contact = () => {
@@ -89,22 +89,22 @@ const Contact = () => {
   return (
     <Box w={['90%', '80%']} mx='auto' mb='10'>
        <Box maxW='500px' mx='auto' textAlign='center' my='10'>
-        <Zoom>
+        {/* <Zoom> */}
           <Heading mb="5" fontSize={30}>Contact Us</Heading>
-        </Zoom>
+        {/* </Zoom> */}
 
-        <Fade left>
+        {/* <Fade left> */}
           <Text fontSize={16} lineHeight={8}>
             In doubt of any issue or want to lodge a complaint? Or do you simply
             want to inform us? Let us know what you think. We would love to hear
             from you.{" "}
           </Text>
-        </Fade>
+        {/* </Fade> */}
        </Box>
 
         <Box w='100%' display='flex' justifyContent='space-between' alignItems='center' flexWrap='wrap' mt="8">
           <Box w={['450px', '450px']}>
-            <Slide left>
+            {/* <Slide left> */}
               <form onSubmit={handleSubmit} method="post">
                 <Box mb="3">
                   <FormLabel fontSize={15}>Firstname</FormLabel>
@@ -171,7 +171,7 @@ const Contact = () => {
                   <Checkbox>I agree with the privacy policy</Checkbox>
                 </Box>
               </form>
-            </Slide>
+            {/* </Slide> */}
             {/* <div className="contact__links"> */}
 
             {/* <Text mt="2" fontSize={16} w="100%" fontWeight='medium'>
@@ -194,7 +194,7 @@ const Contact = () => {
               <br />
             </Stack> */}
           </Box>
-          <Zoom>
+          {/* <Zoom> */}
             <Box w={['350px', '500px']} display={['none', 'block']}>
               <Image
                 src={contactSrc}
@@ -202,7 +202,7 @@ const Contact = () => {
                 w='100%'
               />
             </Box>
-          </Zoom>
+          {/* </Zoom> */}
         </Box>
     </Box>
   );

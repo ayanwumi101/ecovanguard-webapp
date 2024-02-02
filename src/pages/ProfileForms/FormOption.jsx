@@ -5,7 +5,7 @@ import {BsBoxArrowDownRight} from 'react-icons/bs'
 import { Link } from "react-router-dom";
 import ButtonLink from "./../../components/Button/button";
 import {Box, Button, Center, Flex, Heading, Text, VStack } from "@chakra-ui/react";
-import {Zoom, Fade, Slide, Bounce} from 'react-reveal'
+// import {Zoom, Fade, Slide, Bounce} from 'react-reveal'
 
 const FormOption = () => {
   return (
@@ -13,10 +13,12 @@ const FormOption = () => {
       <Box maxW='800px' mx='auto' my='5'>
         <Box mb='8' p='4'>
           <Box textAlign='center' lineHeight='20px' >
-            <Bounce><Heading fontWeight='medium' fontSize={[28, 35]}>Become a Registered EcoVanguard Member</Heading></Bounce>
+            {/* <Bounce> */}
+              <Heading fontWeight='medium' fontSize={[28, 35]}>Become a Registered EcoVanguard Member</Heading>
+            {/* </Bounce> */}
           </Box>
 
-          <Fade left>
+          {/* <Fade left> */}
             <Box textAlign='justify' overflow='hidden'>
               <Text lineHeight={8} fontSize={18}>
                 Are you interested in protecting the one thing you have in common
@@ -26,7 +28,7 @@ const FormOption = () => {
                 next level? Join us today!
               </Text>
             </Box>
-          </Fade>
+          {/* </Fade> */}
           {/* <Heading>Be a member today!</Heading> */}
         </Box>
 

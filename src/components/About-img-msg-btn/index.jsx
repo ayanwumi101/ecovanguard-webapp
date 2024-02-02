@@ -3,7 +3,7 @@ import ButtonLink from "../Button/button";
 import styles from "./style.module.css";
 import { Link } from "react-router-dom";
 import { Heading, Text, Button, Box, Stack, Image } from "@chakra-ui/react";
-import {Zoom, Slide, Fade} from 'react-reveal'
+
 
 function ImgMsgBtn({
   msgHeader,
@@ -21,13 +21,13 @@ function ImgMsgBtn({
   return (
     <Box w='80%' mx='auto' mb={[14, 20]}>
           <Stack direction={['column-reverse', 'row']} justifyContent='space-between' alignItems='center'>
-            <Zoom>
+            {/* <Zoom> */}
             <Box className={styles.section_img} mb='3' w={['320px', '500px']}>
                 <Image src={image} alt="Waste Disposal" w='100%' />
               </Box>
-            </Zoom>
+            {/* </Zoom> */}
 
-            <Slide left>
+            {/* <Slide left> */}
               <Box className={styles.msgBody} mb='4' overflow='hidden' w={['320px', '500px']}>
                 <Heading fontSize={[28, 30]} textAlign='center'>{msgHeader}</Heading>
                 <Text mb='3' fontSize={16} lineHeight={9}>{msgBody1}</Text>
@@ -40,7 +40,7 @@ function ImgMsgBtn({
                   </Link>
                 </Box>
               </Box>
-            </Slide>
+            {/* </Slide> */}
           </Stack>
     </Box>
   );

@@ -6,7 +6,6 @@ import executives from "../../assets/man.svg";
 import ourMissionLogo from "../../assets/delete.svg";
 import ourVisionLogo from "../../assets/google_icon.svg";
 import { Heading, Text, Box } from "@chakra-ui/react";
-import { Zoom, Fade, Slide } from "react-reveal";
 import Hero from "./subpages/Hero";
 import About from "./subpages/About";
 

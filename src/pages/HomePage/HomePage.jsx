@@ -11,9 +11,6 @@ import ImageSlider from "../../components/carousel/";
 import InputComponent from "../../components/Input/input";
 import { Link } from "react-router-dom";
 import { Box, Heading, Image, Text, Button, Input, Flex, Stack  } from "@chakra-ui/react";
-import Fade from 'react-reveal/Fade'
-import Slide from 'react-reveal/Slide'
-import Zoom from 'react-reveal/Zoom'
 import ImgMsgBtn from "../../components/About-img-msg-btn";
 import leaf from '../../assets/leaf.png'
 import globe from '../../assets/globes.png'
