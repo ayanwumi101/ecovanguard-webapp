@@ -15,6 +15,15 @@ import Fade from 'react-reveal/Fade'
 import Slide from 'react-reveal/Slide'
 import Zoom from 'react-reveal/Zoom'
 import ImgMsgBtn from "../../components/About-img-msg-btn";
+import leaf from '../../assets/leaf.png'
+import globe from '../../assets/globes.png'
+import monitor from '../../assets/monitor.png'
+import ecoEducation from '../../../public/assets/eco-education.jpg'
+import reformation from '../../../public/assets/environmental-reformation.jpg'
+import nature from '../../../public/assets/greener-nature.jpg'
+import volunteer from '../../../public/assets/volunteer.png'
+import PublicationCard from "../Publications/subpages/PublicationCard";
+
 
 
 function SimpleCarousel() {
@@ -43,230 +52,170 @@ function SimpleCarousel() {
   );
 }
 
-function SecondSection(props) {
-  return (
-    <div className="section2-wrapper">
-      <div className="section2-container">
-        <div className="center">
-          <Heading mt='5'>What we do</Heading>
-        </div>
-        <div className="section2-body">
-          <div className="top">
-            <Slide left>
-            <div className="sect2-msg msg1">
-              <Image src={logo1} display='block' mx='auto' mb='4' alt="icon for education" />
-              <Box p={[2,0]}>
-                <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Education</Heading>
-                  <Text fontSize={16} lineHeight={8}>
-                  We educate secondary school and tertiary institution students
-                  on the importance of proper waste management practices and
-                  advocate for an eco-friendly environment and the
-                  implementation of a circular economy.
-                </Text>
-              </Box>
-            </div>
-            </Slide>
 
-            <Slide right>
-            <div className="sect2-msg msg2">
-              <Image src={logo2} alt="" display='block' mx='auto' mb='4' />
-              <Box p={[2,0]}>
-                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Waste Management</Heading>
-                  <Text lineHeight={8} fontSize={16}>
-                  We advocate having a clean city which in turn leads to having
-                  a greener earth leading to an eco-friendly environment and the
-                  implementation of a circular economy.
-                </Text>
-              </Box>
-            </div>
-            </Slide>
 
-          </div>
-
-          <div className="bottom">
-          <Slide left>
-            <div className="sect2-msg msg3">
-              <Image src={logo1} alt="" display='block' mx='auto' mb='4' />
-                <Box p={[2, 0]}>
-                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Education</Heading>
-                  <Text lineHeight={8} fontSize={16}>
-                  We educate secondary school and tertiary institution students
-                  on the importance of proper waste management practices and
-                  advocate for an eco-friendly environment and the
-                  implementation of a circular economy.
-                </Text>
-              </Box>
-            </div>
-          </Slide>
-
-            <Slide right>
-            <div className="sect2-msg msg4">
-              <Image src={logo2} alt="" display='block' mx='auto' mb='4' />
-              <Box p={[2,0]}>
-                  <Heading textAlign='center' mb='3' fontWeight='medium' fontSize={30}>Waste Management</Heading>
-                  <Text lineHeight={8} fontSize={16}>
-                  We advocate having a clean city which in turn leads to having
-                  a greener earth leading to an eco-friendly environment and the
-                  implementation of a circular economy.
-                </Text>
-              </Box>
-            </div>
-            </Slide>
-          </div>
-        </div>
-        <div className="center">
-          <Link to="/about">
-            <Button size='lg' bg='#0397d6' h='55px' color='white'>About the Club</Button>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ThirdSection() {
-  return (
-    <Box className="section3-wrapper" mt='14' mb='16'>
-      <div className="section3-container">
-        <Zoom>
-        <div className="sect3-header">
-          <Heading>Our Members</Heading>
-        </div>
-        </Zoom>
-
-        <div className="sect3-body">
-          <Slide left>
-          <div className="sec-sch">
-            <div>73</div>
-            <h3 style={{fontSize: '28px'}}>Secondary Schools</h3>
-          </div>
-          </Slide>
-
-          <Zoom>
-          <div className="all-members">
-            <div className="center">73</div>
-            <h3 style={{ fontSize: '28px' }}>All members</h3>
-          </div>
-          </Zoom>
-
-          <Slide right>
-          <div className="tert-inst">
-            <div>73</div>
-            <h3 style={{ fontSize: '28px' }}>Tertiary Institutions</h3>
-          </div>
-          </Slide>
-        </div>
-        <div className="center">
-          <Link to="/signup">
-            <Button size='lg' w='200px' h='55px' bg='#0397d6' color='white'>Join Us</Button>
-          </Link>
-        </div>
-      </div>
-    </Box>
-  );
-}
-
-function FourthSection() {
-  return (
-    <div>
-      <Heading textAlign='center' fontSize={[35, 40]} mb='14'>Our Projects</Heading>
-      <Zoom>
-      <ImgMsgBtn
-        mainHeader={"Our Projects"}
-        msgHeader={"EcoVanguard Projects"}
-        msgBody1={
-          "All Ecovanuard’s Projects are focused on one aim - to make the earth a better place for everyone to live in.With our projects, we want to make the environment- land, water and air more habitable and toxic free."
-        }
-        msgBtn={"See Projects"}
-        btnLink="/projects"
-        image={ProjectImg1}
-        swap={true}
-      />
-      </Zoom>
-
-      <Slide right>
-      <ImgMsgBtn
-        msgHeader={"Ongoing Project"}
-        msgBody1={
-          "The EcoVanguard club is currently working towards donating 200 pieces of this set of waste disposal system to the University of Ibadan. We believe this will aid proper waste management in the University environment and lead to an overall clean and healthy environment. "
-        }
-        msgBtn={"Fund Project"}
-        btnLink="/donate"
-        image={ProjectImg2}
-        swap={false}
-      />
-      </Slide>
-
-      <Zoom>
-      <ImgMsgBtn
-        mainHeader={"Events"}
-        msgHeader={"Last Event"}
-        msgBody1={
-          "During the last “World Water Day” which happened on 26th March 2022, the Ecovanguard club members  in Ibadan led by the club’s Patron Engineer W.O Ajagbe attended their  first official outing the Engr Bola Ige annual lecture at the NSE headquarters Ibadan. read more..."
-        }
-        msgBtn={"Gallery"}
-        btnLink="/gallery"
-        image={EventImg1}
-        swap={true}
-      />
-      </Zoom>
-
-      <Zoom>
-      <ImgMsgBtn
-        mainHeader={"Our Next Day Out"}
-        msgHeader={"Bodija Market"}
-        msgBody1={
-          "Ecovanguard club in conjuction with the CIA (Clean Ibadan Ambassador) will be visiting the Bodija Market to enlighten the marketers on the side effects of improper waste disposal on the society and the earth in general, we will also provide them with waste bins."
-        }
-        msgBtn={"Join this Campaign"}
-        image={EventImg2}
-        swap={false}
-      />
-      </Zoom>
-    </div>
-  );
-}
-function NewsletterComponent() {
-  return (
-    <Box mb='10' className="center">
-      <Fade right>
-        <Stack>
-          <Box mb='2'>
-            <Text style={{ color: "#3a3a3a" }} mb='3' fontSize={16} p={[2, 0]}>
-              Subscribe to our newsletter to get the latest update about nature and
-              the ecosystem
-            </Text>
-          </Box>
-
-          <Stack direction={['column', 'row']} w={['320px', '550px']} mx='auto' spacing={[4, 0]}>
-            <Input
-              type="email"
-              placeholder="e.g ecovanguard@gmail.com"
-              size='lg'
-            />
-            <Button type="submit" size='lg' bg='#0397d6' color='white'>Subscribe</Button>
-          </Stack>
-        </Stack>
-     
-      {/* <Box maxW='600px' mx='auto' flexWrap='wrap' px='2'>
-       <Flex gap={4} alignItems='center'>
-          
-       </Flex>
-      </Box> */}
-      </Fade>
-    </Box>
-  );
-}
 const HomePage = () => {
   return (
-    <main>
+    <main style={{width: '100%', overflow: 'hidden', margin: 0, padding: 0, boxSizing: 'border-box'}}>
       <SimpleCarousel />
-      <SecondSection />
-      <ThirdSection />
-      <FourthSection />
-      <NewsletterComponent />
+      <Quote />
+      <WhatWeDo />
+      <Slider />
+      <Volunteer />
+      <Publications />
     </main>
   );
 };
 
 export default HomePage;
+
+
+const Quote = ( ) => {
+  return (
+    <Box w={['95%','70%']} mx='auto' my='14'>
+      <Heading color='#4AAA42' fontSize={['70px','120px']} fontWeight={900} m='0' p='0'>“</Heading>
+      <Heading fontSize={[25, 56]} fontWeight='medium' mt='0' p='0' textAlign='center' lineHeight={['40px','70px']}>
+          Every small eco-friendly choice <br /> you make today can create a <br /> greener and brighter tomorrow for <br /> our planet
+      </Heading>
+      <Heading color='#4AAA42' fontSize={['70px','120px']} fontWeight={900} m='0' p='0' textAlign='right'>“</Heading>
+
+      <Box textAlign='center'>
+        <Heading m='0' fontSize={[24,24]} fontWeight='medium'>Testimony Akpunwoke</Heading>
+        <Text color='#787579' fontSize={16}>President, Ecovanguard Club.</Text>
+      </Box>
+    </Box>
+  )
+}
+
+
+
+const WhatWeDo = () => {
+  return (
+    <Box w={['90%', '70%']} mx='auto' mb='16'>
+      <Box mb='8' textAlign={['center', 'left']}>
+        <Heading fontSize={32}>What we do</Heading>
+      </Box>
+
+      <Box h={['auto', 'auto', '700px']} display='flex' justifyContent='space-between' flexWrap='wrap'>
+        <Box w='400px' h='100%'>
+          <Flex flexDirection='column'>
+            <Box w='100%' h='230px'>
+              <Heading fontWeight='medium' fontSize={26} m='0'>Eco-education</Heading>
+              <Text fontSize={16} lineHeight={8}>
+                An eco-friendly environment should be paramount to everybody. As such, 
+                we enlighten and educate individuals and students on the importance of 
+                maintaining a greener environment.
+              </Text>
+            </Box>
+            <Box w='100%' h='230px'>
+              <Image src={reformation} w='100%' boxShadow='md' objectFit='contain' borderTopLeftRadius='60px' borderBottomRightRadius='60px' />
+            </Box>
+            <Box w='100%' h='230px'>
+              <Heading fontWeight='medium' fontSize={26}>Greener Earth Advocacy</Heading>
+              <Text fontSize={16} lineHeight={8}>
+                Greener Earth is our main focus and can be best achieved by collective efforts. Through our voices and actions, we are hopeful of being able to push for the desired earth. 
+              </Text>
+            </Box>
+          </Flex>
+        </Box>
+        <Box position='relative' display={['none', 'none', 'block']}>
+          <Box w='1px' h='100%' bg='lightgray' position='absolute'></Box>
+          <Box display='flex' flexDirection='column' justifyContent='flex-start' h='100%' position='absolute' left='-27px'>
+            <Box w='100px' h='220px'>
+              <Image src={monitor} />
+            </Box>
+            <Box h='220px'>
+              <Image src={globe} />
+            </Box>
+            <Box>
+              <Image src={leaf} />
+            </Box>
+          </Box> 
+        </Box>
+        
+        <Box w='400px' h='100%'>
+          <Flex flexDirection='column' justifyContent='space-between'>
+            <Box w='100%' h='230px' m='0'>
+              <Image src={ecoEducation} w='100%' boxShadow='md' objectFit='contain' borderTopLeftRadius='60px' borderBottomRightRadius='60px' />
+            </Box>
+            <Box w='100%' h='230px' mb='6'>
+              <Heading fontWeight='medium' fontSize={26}>Environmental Reformation</Heading>
+              <Text fontSize={16} lineHeight={8}>
+                Environmental degradation in the world is becoming more rampant and conscious efforts are expected to be taken in order to eliminate this and reform the environment.
+              </Text>
+            </Box>
+            <Box w='100%' h='230px'>
+              <Image src={nature} w='100%' boxShadow='md' objectFit='contain' borderTopLeftRadius='60px' borderBottomRightRadius='60px' />
+            </Box>
+          </Flex>
+        </Box>
+      </Box>
+      
+    </Box>
+  )
+}
+
+
+const Slider = () => {
+  const schools = ['Assabaq College', 'Imam Zubair', 'University of Ibadan', 'Lead City University']
+  return (
+    <Box w='100%' mb='14'>
+      <Box textAlign='center'>
+        <Heading fontSize={[30,35]}>20+ Institutions Represented</Heading>
+      </Box>
+
+      <Box bg='#4AAA42' overflow='auto' w='100%' h='77px' display='flex' alignItems='center'>
+        {/* <marquee behavior="" direction=""> */}
+        <Flex alignItems='center' w='80%' mx='auto' justifyContent={['space-between','space-between']}>
+          
+          {schools.map((item) => {
+            return (
+              
+                <Box textAlign='center' w='180px' ><Text color='white' w={['180px']} fontSize={18}>{item}</Text></Box>
+              
+            )
+          })}
+          
+        </Flex>
+        {/* </marquee> */}
+      </Box>
+    </Box>
+  )
+}
+
+
+const Volunteer = () => {
+  return (
+    <Box w={['90%', '70%']} mx='auto' mb='14'>
+      <Flex justifyContent='space-between' alignItems='center' flexWrap='wrap'>
+        <Box w='450px' mb='12'>
+          <Text fontSize={16} lineHeight={8}>
+            Ecovanguard club gives its member an opportunity to represent the earth, make the earth a greener healthier and cleaner world for its present and future residents
+          </Text>
+          <Button bg='#0397D6' color='white' fontWeight='normal' size='lg' fontSize={15}>Become a Memeber</Button>
+        </Box>
+        <Box w='400px'>
+          <Image src={volunteer} />
+        </Box>
+      </Flex>
+    </Box>
+  )
+}
+
+
+const Publications = () => {
+  return (
+    <Box mb='14' w={['95%', '70%']} mx='auto'>
+      <Box textAlign='center' mb='10'>
+        <Heading fontSize={34}>Recent Publications</Heading>
+      </Box>
+      <Box>
+        <Flex justifyContent={['center','space-between']} alignItems='center' flexWrap='wrap'>
+          <PublicationCard />
+          <PublicationCard />
+          <PublicationCard />
+        </Flex>
+      </Box>
+    </Box>
+  )
+}

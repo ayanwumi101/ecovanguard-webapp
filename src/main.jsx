@@ -55,7 +55,7 @@ root.render(
           <Route path="location" element={<Location />} />
           <Route path="donate" element={<Donate />} />
           <Route path="password" element={<PasswordReset />} />
-          <Route path="projects" element={<Projects />} />
+          {/* <Route path="projects" element={<Projects />} /> */}
           <Route path="profile" element={<Profile />} />
           <Route path="publications" element={<Publications />} />
           <Route path="registered_members" element={<Members />} />

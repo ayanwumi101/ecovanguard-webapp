@@ -42,12 +42,12 @@ const hideNavbar = pagesWithoutNavbar.includes(location.pathname);
         <Box borderBottom='1.5px solid lightgray' boxShadow='md' pt='3.5'>
         <Box className={styles.navbar_container}>
           <header>
-            <Box as='nav' display='flex' alignItems='center' justifyContent='space-between'>
-              <a href="/">
+            <Box as='nav' display='flex' alignItems='flex-start' justifyContent='space-between'>
+              <Link to="/">
                 <div className={styles.brand}>
                   <Image src={logo} alt="EcoVanguard Logo" className={styles.logo} />
                 </div>
-              </a>
+              </Link>
               <div>
                 <div className={styles.links}>
                   <LinkList />
@@ -74,9 +74,9 @@ const SideNav = ({ setShowSidebar }) => {
     <>
       <div className={styles.sidenav_modal}>
         <div className={styles.sidenav_container}>
-          <Stack direction='column' justifyContent='space-between' h='100%'>
+          <Stack direction='column' justifyContent='space-between' h='100%' pb='9'>
             <Box>
-                <Flex alignItems='center' justifyContent='space-between' w='92%' py='3' mx='auto'>
+                <Flex alignItems='flex-start' justifyContent='space-between' w='92%' py='3' mx='auto'>
                   <Link to="/" onClick={() => setShowSidebar(false)}>
                     <div className={styles.brand}>
                       <Image src={logo} alt="EcoVanguard Logo" className={styles.logo} />
@@ -127,12 +127,12 @@ export const SideNavLinks = ({setShowSidebar}) => {
     <Box w='100%'>
       <Stack fontSize={18}>
         <Link to='/about' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>About Us</Text></Link>
-        <Link to='/projects' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Projects</Text></Link>
+        {/* <Link to='/projects' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Projects</Text></Link> */}
         <Link to='/donate' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Donate</Text></Link>
         <Link to='/publications' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Publications</Text></Link>
         <Link to='/blog' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Blog</Text></Link>
         <Link to='/contact' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Contact Us</Text></Link>
-        <Link to='/signin' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Account</Text></Link>
+        {/* <Link to='/signin' onClick={() => setShowSidebar(false)}><Text my='0' borderBottom='1px solid lightgray' py={4} pl='7' fontWeight='medium'>Account</Text></Link> */}
       </Stack>
     </Box>
   )
@@ -235,15 +235,6 @@ const LinkList = () => {
     <Box className={styles.lists} display='flex' alignItems='flex-start' gap={7}>
       {openDrawer && <ProfileDrawer currentUser={currentUser} userDetails={userDetails} setOpenDrawer={setOpenDrawer} />}
       <NavLink
-        to="/contact"
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-      >
-        <li>
-          Contact us
-          {/* <BsChevronRight className={styles.right} /> */}
-        </li>
-      </NavLink>
-      <NavLink
         to="/about"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
@@ -252,15 +243,16 @@ const LinkList = () => {
           {/* <BsChevronRight className={styles.right} /> */}
         </li>
       </NavLink>
-      <NavLink
+      
+      {/* <NavLink
         to="/projects"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         <li>
           Projects
-          {/* <BsChevronRight className={styles.right} /> */}
+          
         </li>
-      </NavLink>
+      </NavLink> */}
       <NavLink
         to="/donate"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -285,6 +277,15 @@ const LinkList = () => {
       >
         <li>
           Blog
+          {/* <BsChevronRight className={styles.right} /> */}
+        </li>
+      </NavLink>
+      <NavLink
+        to="/contact"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          Contact us
           {/* <BsChevronRight className={styles.right} /> */}
         </li>
       </NavLink>
@@ -328,14 +329,14 @@ const LinkList = () => {
         : null }
         </Box>
 
-        {!userDetails &&
+        {/* {!userDetails &&
         (<NavLink to="/signin">
           <li className={styles.login} style={{ height: '40px' }}>
             <img src={AccountVector} alt="account" width={27} height={10} />
             Account
             <BsChevronRight className={styles.right} />
           </li>
-        </NavLink>) }
+        </NavLink>) } */}
     </Box>
   );
 };
