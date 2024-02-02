@@ -22,7 +22,6 @@
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.10.8",
     "@mui/x-data-grid": "^5.17.6",
-    "@reach/dialog": "^0.17.0",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.6",
     "@sanity/image-url": "^1.0.1",

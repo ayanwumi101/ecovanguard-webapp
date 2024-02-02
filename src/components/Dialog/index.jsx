@@ -1,12 +1,12 @@
 import React from "react";
-import { DialogOverlay, DialogContent } from "@reach/dialog";
+// import { DialogOverlay, DialogContent } from "@reach/dialog";
 import PropTypes from "prop-types";
-import "@reach/dialog/styles.css";
+// import "@reach/dialog/styles.css";
 
 const DialogComponent = ({ children, label, closeDialog }) => {
   return (
     <>
-      <DialogOverlay isOpen={true} onDismiss={() => closeDialog()}>
+      {/* <DialogOverlay isOpen={true} onDismiss={() => closeDialog()}>
         <DialogContent
           aria-label={label}
           style={{
@@ -19,7 +19,7 @@ const DialogComponent = ({ children, label, closeDialog }) => {
         >
           {children}
         </DialogContent>
-      </DialogOverlay>
+      </DialogOverlay> */}
     </>
   );
 };
